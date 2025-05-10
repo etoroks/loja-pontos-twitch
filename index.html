@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loja de Pontos - Twitch</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #9147ff;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    main {
+      padding: 20px;
+    }
+    .item {
+      background-color: #1f1f1f;
+      margin-bottom: 20px;
+      padding: 15px;
+      border-radius: 10px;
+    }
+    .item h2 {
+      margin: 0 0 10px 0;
+    }
+    .item p {
+      margin: 5px 0;
+    }
+    .item button {
+      padding: 10px 15px;
+      background-color: #9147ff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .saldo {
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Loja de Pontos - Twitch</h1>
+  </header>
+  <main>
+    <div class="saldo">
+      <h2>Seus Pontos: <span id="pontos">640000</span></h2>
+      <p>Equivalente em Reais: R$ <span id="reais">640,00</span></p>
+    </div>
+
+    <div class="item">
+      <h2>Glock Fade</h2>
+      <p>Valor: R$2,00 / 2000 pontos</p>
+      <button onclick="comprar(2000)">Trocar por 2000 pontos</button>
+    </div>
+
+    <div class="item">
+      <h2>AK-47 Redline</h2>
+      <p>Valor: R$15,00 / 15000 pontos</p>
+      <button onclick="comprar(15000)">Trocar por 15000 pontos</button>
+    </div>
+
+    <div class="item">
+      <h2>M4A4 Howl</h2>
+      <p>Valor: R$120,00 / 120000 pontos</p>
+      <button onclick="comprar(120000)">Trocar por 120000 pontos</button>
+    </div>
+  </main>
+
+  <script>
+    let pontos = 640000;
+
+    function atualizarTela() {
+      document.getElementById('pontos').textContent = pontos;
+      document.getElementById('reais').textContent = (pontos / 1000).toFixed(2);
+    }
+
+    function comprar(custo) {
+      if (pontos >= custo) {
+        pontos -= custo;
+        alert("Compra realizada com sucesso!");
+        atualizarTela();
+      } else {
+        alert("Você não tem pontos suficientes.");
+      }
+    }
+
+    atualizarTela();
+  </script>
+</body>
+</html>
