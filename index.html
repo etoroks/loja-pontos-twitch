@@ -4,9 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Loja de Pontos - Twitch</title>
+
+  <!-- Link para fontes do Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', sans-serif;
       background-color: #121212;
       color: #fff;
       margin: 0;
@@ -16,25 +20,45 @@
       background-color: #9147ff;
       padding: 20px;
       text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
     }
     header h1 {
       margin: 0;
       font-size: 2rem;
     }
+    header img {
+      width: 50px;
+      height: 50px;
+    }
     main {
       padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .saldo {
+      margin-bottom: 30px;
+      text-align: center;
     }
     .item {
       background-color: #1f1f1f;
       margin-bottom: 20px;
       padding: 15px;
       border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
     }
     .item h2 {
-      margin: 0 0 10px 0;
+      margin: 0;
+      font-size: 1.2rem;
     }
     .item p {
       margin: 5px 0;
+      font-size: 1rem;
     }
     .item button {
       padding: 10px 15px;
@@ -43,16 +67,20 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s;
     }
-    .saldo {
-      margin-bottom: 30px;
+    .item button:hover {
+      background-color: #6c3bb6;
     }
   </style>
 </head>
 <body>
   <header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Twitch_Icon_2019.svg/1200px-Twitch_Icon_2019.svg.png" alt="Logo da Twitch">
     <h1>Loja de Pontos - Twitch</h1>
   </header>
+
   <main>
     <div class="saldo">
       <h2>Seus Pontos: <span id="pontos">640000</span></h2>
@@ -60,20 +88,26 @@
     </div>
 
     <div class="item">
-      <h2>Glock Fade</h2>
-      <p>Valor: R$2,00 / 2000 pontos</p>
+      <div>
+        <h2>Glock Fade</h2>
+        <p>Valor: R$2,00 / 2000 pontos</p>
+      </div>
       <button onclick="comprar(2000)">Trocar por 2000 pontos</button>
     </div>
 
     <div class="item">
-      <h2>AK-47 Redline</h2>
-      <p>Valor: R$15,00 / 15000 pontos</p>
+      <div>
+        <h2>AK-47 Redline</h2>
+        <p>Valor: R$15,00 / 15000 pontos</p>
+      </div>
       <button onclick="comprar(15000)">Trocar por 15000 pontos</button>
     </div>
 
     <div class="item">
-      <h2>M4A4 Howl</h2>
-      <p>Valor: R$120,00 / 120000 pontos</p>
+      <div>
+        <h2>M4A4 Howl</h2>
+        <p>Valor: R$120,00 / 120000 pontos</p>
+      </div>
       <button onclick="comprar(120000)">Trocar por 120000 pontos</button>
     </div>
   </main>
