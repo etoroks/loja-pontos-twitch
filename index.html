@@ -1,84 +1,108 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Loja de Pontos - Twitch</title>
-
-  <!-- Link para fontes do Google -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Loja de Skins - Twitch</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #121212;
+      margin: 0;
+      font-family: 'Rajdhani', sans-serif;
+      background-color: #0f0f0f;
       color: #fff;
-      margin: 0;
-      padding: 0;
     }
+
     header {
-      background-color: #9147ff;
-      padding: 20px;
+      background: #9147ff;
+      padding: 20px 40px;
       text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
     }
+
     header h1 {
+      font-size: 2.5rem;
       margin: 0;
-      font-size: 2rem;
+      color: #fff;
     }
-    header img {
-      width: 50px;
-      height: 50px;
-    }
+
     main {
-      padding: 20px;
+      padding: 30px 5%;
       max-width: 1200px;
       margin: auto;
     }
+
     .saldo {
-      margin-bottom: 30px;
+      margin-bottom: 40px;
       text-align: center;
     }
+
+    .saldo h2 {
+      font-size: 1.8rem;
+    }
+
+    .saldo p {
+      color: #aaa;
+    }
+
+    .loja-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
     .item {
-      background-color: #1f1f1f;
-      margin-bottom: 20px;
+      background-color: #1e1e1e;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease;
+    }
+
+    .item:hover {
+      transform: scale(1.03);
+    }
+
+    .item img {
+      width: 100%;
+      display: block;
+    }
+
+    .item-content {
       padding: 15px;
-      border-radius: 10px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 15px;
     }
-    .item h2 {
-      margin: 0;
-      font-size: 1.2rem;
+
+    .item-content h2 {
+      margin: 10px 0 5px;
+      font-size: 1.3rem;
     }
-    .item p {
-      margin: 5px 0;
+
+    .item-content p {
+      margin: 5px 0 15px;
       font-size: 1rem;
     }
-    .item button {
-      padding: 10px 15px;
+
+    .item-content button {
+      width: 100%;
+      padding: 10px;
+      border: none;
       background-color: #9147ff;
       color: white;
-      border: none;
-      border-radius: 5px;
+      font-weight: bold;
+      font-size: 1rem;
+      border-radius: 6px;
       cursor: pointer;
-      font-weight: 600;
-      transition: background-color 0.3s;
+      transition: background-color 0.2s ease;
     }
-    .item button:hover {
-      background-color: #6c3bb6;
+
+    .item-content button:hover {
+      background-color: #7a2de3;
     }
+
   </style>
 </head>
 <body>
   <header>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Twitch_Icon_2019.svg/1200px-Twitch_Icon_2019.svg.png" alt="Logo da Twitch">
-    <h1>Loja de Pontos - Twitch</h1>
+    <h1>Loja de Skins - Twitch</h1>
   </header>
 
   <main>
@@ -87,28 +111,33 @@
       <p>Equivalente em Reais: R$ <span id="reais">640,00</span></p>
     </div>
 
-    <div class="item">
-      <div>
-        <h2>Glock Fade</h2>
-        <p>Valor: R$2,00 / 2000 pontos</p>
+    <div class="loja-grid">
+      <div class="item">
+        <img src="https://cdn.csgoskins.gg/images/skins/skin-glock-18-fade.png" alt="Glock Fade">
+        <div class="item-content">
+          <h2>Glock-18 | Fade</h2>
+          <p>R$2,00 / 2.000 pontos</p>
+          <button onclick="comprar(2000)">Trocar</button>
+        </div>
       </div>
-      <button onclick="comprar(2000)">Trocar por 2000 pontos</button>
-    </div>
 
-    <div class="item">
-      <div>
-        <h2>AK-47 Redline</h2>
-        <p>Valor: R$15,00 / 15000 pontos</p>
+      <div class="item">
+        <img src="https://cdn.csgoskins.gg/images/skins/skin-ak-47-redline.png" alt="AK-47 Redline">
+        <div class="item-content">
+          <h2>AK-47 | Redline</h2>
+          <p>R$15,00 / 15.000 pontos</p>
+          <button onclick="comprar(15000)">Trocar</button>
+        </div>
       </div>
-      <button onclick="comprar(15000)">Trocar por 15000 pontos</button>
-    </div>
 
-    <div class="item">
-      <div>
-        <h2>M4A4 Howl</h2>
-        <p>Valor: R$120,00 / 120000 pontos</p>
+      <div class="item">
+        <img src="https://cdn.csgoskins.gg/images/skins/skin-m4a4-howl.png" alt="M4A4 Howl">
+        <div class="item-content">
+          <h2>M4A4 | Howl</h2>
+          <p>R$120,00 / 120.000 pontos</p>
+          <button onclick="comprar(120000)">Trocar</button>
+        </div>
       </div>
-      <button onclick="comprar(120000)">Trocar por 120000 pontos</button>
     </div>
   </main>
 
@@ -116,7 +145,7 @@
     let pontos = 640000;
 
     function atualizarTela() {
-      document.getElementById('pontos').textContent = pontos;
+      document.getElementById('pontos').textContent = pontos.toLocaleString('pt-BR');
       document.getElementById('reais').textContent = (pontos / 1000).toFixed(2);
     }
 
